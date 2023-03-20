@@ -3,6 +3,9 @@
 # Default packages are for the configuration and corresponding .config folders
 # Install packages after installing base Debian with no GUI
 
+#Go to home directory
+cd ~
+
 # xorg display server installation
 sudo apt install -y xorg xbacklight xbindkeys xvkbd xinput
 
@@ -61,7 +64,7 @@ sudo systemctl enable cups
 sudo systemctl enable bluetooth
 
 # Packages needed for bspwm installation
-sudo apt install -y bspwm dmenu sxhkd picom numlockx rofi dunst libnotify-bin unzip geany scrot
+sudo apt install -y bspwm dmenu sxhkd picom numlockx rofi dunst libnotify-bin unzip scrot
 
 # Command line text editor -- nano preinstalled 
 sudo apt install -y micro
