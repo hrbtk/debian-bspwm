@@ -1,99 +1,110 @@
- #!/bin/bash
-
-# Default packages are for the configuration and corresponding .config folders
-# Install packages after installing base Debian with no GUI
+#!/bin/bash
 
 # xorg display server installation
-sudo apt install -y xorg xbacklight xbindkeys xvkbd xinput
+sudo apt install xorg xbacklight xbindkeys xvkbd xinput
 
 # PACKAGE INCLUDES build-essential.
-sudo apt install -y build-essential
+sudo apt install build-essential
 
 # Microcode for Intel/AMD 
-# sudo apt install -y amd64-microcode
-sudo apt install -y intel-microcode 
+# sudo apt install amd64-microcode
+sudo apt install intel-microcode 
 
 # Network File Tools/System Events
-sudo apt install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager
+sudo apt install dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager
 
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
 # File Manager (eg. pcmanfm,krusader,thunar,nautilus)
-sudo apt install -y pcmanfm
+sudo apt install thunar
 
 # Terminal (eg. terminator,kitty,xfce4-terminal)
-sudo apt install -y kitty
+sudo apt install kitty
 
 # Sound packages
-sudo apt install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa
+sudo apt install pulseaudio alsa-utils pavucontrol volumeicon-alsa
 
 # Neofetch/HTOP
-sudo apt install -y neofetch htop
+sudo apt install neofetch htop
 
 # Network Manager
-sudo apt install -y network-manager network-manager-gnome
+sudo apt install network-manager network-manager-gnome 
 
-# Installation for Appearance management
-sudo apt install -y lxappearance 
+# Appearance management
+sudo apt install lxappearance 
 
-# Browser Installation (Chrome later)
-# sudo apt install -y firefox-esr
+# Browser Installation (Firefox)
+sudo apt install firefox-esr 
 
 # Desktop background browser/handler 
 # feh --bg-fill /path/to/directory 
-# sudo apt install -y nitrogen 
-sudo apt install -y feh
+sudo apt install nitrogen 
+# sudo apt install feh
  
-# Fonts and icons for now
-sudo apt install -y fonts-firacode fonts-liberation2 fonts-ubuntu papirus-icon-theme fonts-cascadia-code
+# Fonts and icons
+sudo apt install fonts-firacode fonts-liberation2 fonts-ubuntu papirus-icon-theme fonts-cascadia-code
 
 # EXA installation
-# replace ls command in .bashrc file with line below
-# alias ls='exa -al --long --header --color=always --group-directories-first' 
-sudo apt install -y exa
+sudo apt install exa
+
+# Galculator installation
+sudo apt install galculator
 
 # Printing and bluetooth (if needed)
-sudo apt install -y cups system-config-printer simple-scan
-sudo apt install -y bluez blueman
+sudo apt install cups system-config-printer simple-scan
+sudo apt install bluez blueman
 
 sudo systemctl enable cups
 sudo systemctl enable bluetooth
 
 # Packages needed for bspwm installation
-sudo apt install -y bspwm dmenu sxhkd picom numlockx rofi dunst libnotify-bin unzip geany scrot
+sudo apt install bspwm sxhkd picom numlockx rofi dunst libnotify-bin unzip geany scrot mousepad
 
-# Command line text editor -- nano preinstalled 
-sudo apt install -y micro
-# sudo apt install -y vim
+# Command line text editor
+sudo apt install micro
 
 # Create folders in user directory (eg. Documents,Downloads,etc.)
 xdg-user-dirs-update
-
-#Google Chrome
-cd ./Downloads
-sudo apt install -y wget
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
-rm ./google-chrome-stable_current_amd64.deb
-cd ..
 
 mkdir -p ~/.config/{bspwm,sxhkd,dunst}
 
 install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
 install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
-# Install Lightdm Console Display Manager
-sudo apt install -y lightdm lightdm-gtk-greeter-settings
-sudo systemctl enable lightdm
+# Ly Console Manager
+# Needed packages
+sudo apt install libpam0g-dev libxcb-xkb-dev
+cd 
+git clone --recurse-submodules https://github.com/fairyglade/ly
+cd ly
+make
+sudo make install installsystemd
+sudo systemctl enable ly.service
 
+#Or
+
+# Install Lightdm Console Display Manager
+# sudo apt install -y lightdm lightdm-gtk-greeter-settings
+# sudo systemctl enable lightdm
+
+# XSessions and dwm.desktop
+if [[ ! -d /usr/share/xsessions ]]; then
+    sudo mkdir /usr/share/xsessions
+fi
+
+cat > ./temp << "EOF"
+[Desktop Entry]
+Encoding=UTF-8
+Name=bspwm
+Comment=Binary space partitioning window manager
+Exec=bspwm
+Icon=bspwm
+Type=XSession
+EOF
+sudo cp ./temp /usr/share/xsessions/dwm.desktop;rm ./temp
 
 ########################################################
-# End of script for default config
-#
-
-## These two scripts will install nerdfonts and copy my configuration files into the ~/.config directory
-## Configuration uses 
 
 source ~/debian-installers/nerdfonts.sh
 
