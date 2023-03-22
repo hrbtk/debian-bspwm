@@ -64,15 +64,19 @@ sudo apt install bspwm sxhkd picom polybar dmenu xterm numlockx rofi dunst libno
 # Command line text editor
 sudo apt install micro
 
+# Install Lightdm Console Display Manager
+sudo apt install -y lightdm lightdm-gtk-greeter-settings
+sudo systemctl enable lightdm
+
 # Ly Console Manager
 # Needed packages
-sudo apt install libpam0g-dev libxcb-xkb-dev
-cd 
-git clone --recurse-submodules https://github.com/fairyglade/ly
-cd ly
-make
-sudo make install installsystemd
-sudo systemctl enable ly.service
+# sudo apt install libpam0g-dev libxcb-xkb-dev
+# cd 
+# git clone --recurse-submodules https://github.com/fairyglade/ly
+# cd ly
+# make
+# sudo make install installsystemd
+# sudo systemctl enable ly.service
 
 ########################################################
 
