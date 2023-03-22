@@ -59,7 +59,7 @@ sudo systemctl enable cups
 sudo systemctl enable bluetooth
 
 # Packages needed for bspwm installation
-sudo apt install bspwm sxhkd picom numlockx rofi dunst libnotify-bin unzip geany scrot mousepad
+sudo apt install bspwm sxhkd picom polybar numlockx rofi dunst libnotify-bin unzip geany scrot mousepad
 
 # Command line text editor
 sudo apt install micro
@@ -102,7 +102,7 @@ Exec=bspwm
 Icon=bspwm
 Type=XSession
 EOF
-sudo cp ./temp /usr/share/xsessions/dwm.desktop;rm ./temp
+sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
 
 ########################################################
 
