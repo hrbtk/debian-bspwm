@@ -64,14 +64,6 @@ sudo apt install bspwm sxhkd picom polybar numlockx rofi dunst libnotify-bin unz
 # Command line text editor
 sudo apt install micro
 
-# Create folders in user directory (eg. Documents,Downloads,etc.)
-xdg-user-dirs-update
-
-mkdir -p ~/.config/{bspwm,sxhkd,dunst}
-
-install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
-install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
-
 # Ly Console Manager
 # Needed packages
 sudo apt install libpam0g-dev libxcb-xkb-dev
@@ -82,32 +74,8 @@ make
 sudo make install installsystemd
 sudo systemctl enable ly.service
 
-#Or
-
-# Install Lightdm Console Display Manager
-# sudo apt install -y lightdm lightdm-gtk-greeter-settings
-# sudo systemctl enable lightdm
-
-# XSessions and dwm.desktop
-if [[ ! -d /usr/share/xsessions ]]; then
-    sudo mkdir /usr/share/xsessions
-fi
-
-cat > ./temp << "EOF"
-[Desktop Entry]
-Encoding=UTF-8
-Name=bspwm
-Comment=Binary space partitioning window manager
-Exec=bspwm
-Icon=bspwm
-Type=XSession
-EOF
-sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
-
 ########################################################
-
-source ~/debian-installers/nerdfonts.sh
 
 sudo apt autoremove
 
-printf "\e[1;32mYou can now reboot! Thanks you.\e[0m\n"
+printf "\e[1;32mNow you can run setup.sh script.\e[0m\n"
