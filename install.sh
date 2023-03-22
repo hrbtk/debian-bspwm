@@ -59,7 +59,7 @@ sudo systemctl enable cups
 sudo systemctl enable bluetooth
 
 # Packages needed for bspwm installation
-sudo apt install bspwm sxhkd picom polybar numlockx rofi dunst libnotify-bin unzip geany scrot mousepad redshift
+sudo apt install bspwm sxhkd picom polybar dmenu xterm numlockx rofi dunst libnotify-bin unzip geany scrot mousepad redshift
 
 # Command line text editor
 sudo apt install micro
