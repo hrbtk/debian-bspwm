@@ -3,6 +3,9 @@
 # Create folders in user directory (eg. Documents,Downloads,etc.)
 xdg-user-dirs-update
 
+mv ~/.bashrc ~/.bashrc.bak
+cp  ~/debian-bspwm-installer/.bashrc ~/.bashrc
+
 mkdir -p ~/.config/{bspwm,sxhkd,dunst}
 
 install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
