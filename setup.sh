@@ -5,7 +5,6 @@ xdg-user-dirs-update
 
 mv ~/.bashrc ~/.bashrc.bak &&
 cp  ~/debian-bspwm-installer/.bashrc ~/.bashrc &&
-bash
 
 # mkdir -p ~/.config/{bspwm,sxhkd,dunst}
 
