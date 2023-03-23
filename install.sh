@@ -77,9 +77,6 @@ sudo apt install -y micro
 # Graphical text editors
 sudo apt install -y geany mousepad
 
-# Session Manager installation
-sudo apt install -y lxsession
-
 # Install Lightdm Console Display Manager
 sudo apt install -y -y lightdm lightdm-gtk-greeter-settings
 sudo systemctl enable lightdm
