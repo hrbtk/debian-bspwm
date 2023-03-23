@@ -4,12 +4,13 @@
 xdg-user-dirs-update
 
 mv ~/.bashrc ~/.bashrc.bak &&
-cp  ~/debian-bspwm-installer/.bashrc ~/.bashrc
+cp  ~/debian-bspwm-installer/.bashrc ~/.bashrc &&
+bash
 
-mkdir -p ~/.config/{bspwm,sxhkd,dunst}
+# mkdir -p ~/.config/{bspwm,sxhkd,dunst}
 
-install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
-install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
+# install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
+# install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
 # XSessions and bspwm.desktop
 if [[ ! -d /usr/share/xsessions ]]; then
@@ -28,22 +29,24 @@ EOF
 sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
 
 cd ~/ && git clone https://github.com/vbeskorovainyi/dotfiles &&
+
+# Copy scripts
 cp -r ~/dotfiles/bin ~/
-# cp ~/dotfiles/backgroud/wallpaper.jpg ~/Pictures/wallpaper.jpg
-cp -r ~/dotfiles/.config/bspwm ~/.config/
-cp -r ~/dotfiles/.config/sxhkd ~/.config/
-cp -r ~/dotfiles/.config/rofi ~/.config/
-cp -r ~/dotfiles/.config/picom ~/.config/
-cp -r ~/dotfiles/.config/dunst ~/.config/
-cp -r ~/dotfiles/.config/kitty ~/.config/
+
+# Copy backgroud image
+cp ~/dotfiles/background/wallpaper.jpg ~/Pictures/wallpaper.jpg
+
+# Copy .config files
+cp -r ~/dotfiles/.config/{bspwm,sxhkd,rofi,picom,dunst,kitty,polybar,neofetch,gtk-3.0} ~/.config/
 
 # Zafiro icons installation
 # https://github.com/zayronxio/Zafiro-icons
-cd ~/ &&
-wget -N https://raw.githubusercontent.com/zayronxio/Zafiro-icons/master/Install-Zafiro-Icons.sh &&
-chmod +x ~/Install-Zafiro-Icons.sh &&
-bash ~/Install-Zafiro-Icons.sh &&
-rm ~/Install-Zafiro-Icons.sh
+# Download and install .deb, script is broken
+# cd ~/ &&
+# wget -N https://raw.githubusercontent.com/zayronxio/Zafiro-icons/master/Install-Zafiro-Icons.sh &&
+# chmod +x ~/Install-Zafiro-Icons.sh &&
+# bash ~/Install-Zafiro-Icons.sh &&
+# rm ~/Install-Zafiro-Icons.sh
 
 # Papirus icons installation
 sudo apt install papirus-icon-theme
@@ -52,8 +55,9 @@ sudo apt install papirus-icon-theme
 # https://github.com/alvatip/Radioactive-nord
 cd ~/ && 
 git clone https://github.com/alvatip/Radioactive-nord &&
+cd ~/Radioactive-nord
 bash ~/Radioactive-nord/install.sh &&
-rm ~/Radioactive-nord/install.sh
+rm -rf ~/Radioactive-nord/
 
 # Installing Nordic theme
 cd ~/ && 
