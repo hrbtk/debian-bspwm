@@ -37,6 +37,31 @@ cp -r ~/dotfiles/.config/picom ~/.config/
 cp -r ~/dotfiles/.config/dunst ~/.config/
 cp -r ~/dotfiles/.config/kitty ~/.config/
 
+# Zafiro icons installation
+# https://github.com/zayronxio/Zafiro-icons
+cd && wget -N https://raw.githubusercontent.com/zayronxio/Zafiro-icons/master/Install-Zafiro-Icons.sh
+chmod +x ~/Install-Zafiro-Icons.sh
+bash ~/Install-Zafiro-Icons.sh
+rm ~/Install-Zafiro-Icons.sh
+
+# Papirus icons installation
+sudo apt install papirus-icon-theme
+
+# Radioactive-nord cursor installation
+# https://github.com/alvatip/Radioactive-nord
+cd && git clone https://github.com/alvatip/Radioactive-nord
+bash ~/Radioactive-nord/install.sh
+rm ~/Radioactive-nord/install.sh
+
+# Installing Nordic theme
+cd && wget -N https://github.com/EliverLara/Nordic/archive/refs/heads/master.zip
+unzip ~/master.zip
+if [[ ! -d ~/.themes ]]; then
+    mkdir ~/.themes
+fi
+mv ~/Nordic-master ~/.themes
+rm ~/master.zip
+
 source ~/debian-bspwm-installer/nerdfonts.sh
 
 ########################################################

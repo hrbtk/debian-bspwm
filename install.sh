@@ -16,8 +16,8 @@ sudo apt install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backen
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
-# File Manager (or pcmanfm)
-sudo apt install -y thunar
+# File Manager (or thunar) and Archive Manager
+sudo apt install -y pcmanfm file-roller
 
 # Terminal 
 sudo apt install -y kitty xterm
@@ -77,7 +77,7 @@ sudo apt install -y micro
 # Graphical text editors
 sudo apt install -y geany mousepad
 
-# Session manager installation
+# Session Manager installation
 sudo apt install -y lxsession
 
 # Install Lightdm Console Display Manager
