@@ -27,8 +27,7 @@ Type=XSession
 EOF
 sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
 
-cd ~/ && git clone https://github.com/vbeskorovainyi/dotfiles
-&&
+cd ~/ && git clone https://github.com/vbeskorovainyi/dotfiles &&
 cp -r ~/dotfiles/bin ~/
 cp ~/dotfiles/backgroud/wallpaper.jpg ~/Pictures/wallpaper.jpg
 cp -r ~/dotfiles/.config/bspwm ~/.config/
