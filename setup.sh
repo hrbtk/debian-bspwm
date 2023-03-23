@@ -28,13 +28,13 @@ Type=XSession
 EOF
 sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
 
+# Copy backgroud image
+cp ~/debian-bspwm-installer/background/wallpaper.jpg ~/Pictures/wallpaper.jpg
+
 cd ~/ && git clone https://github.com/vbeskorovainyi/dotfiles &&
 
 # Copy scripts
 cp -r ~/dotfiles/bin ~/
-
-# Copy backgroud image
-cp ~/dotfiles/background/wallpaper.jpg ~/Pictures/wallpaper.jpg
 
 # Copy .config files
 cp -r ~/dotfiles/.config/{bspwm,sxhkd,rofi,picom,dunst,kitty,polybar,neofetch,gtk-3.0} ~/.config/
