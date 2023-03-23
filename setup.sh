@@ -24,22 +24,20 @@ Type=XSession
 EOF
 sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
 
+cd && git clone https://github.com/vbeskorovainyi/dotfiles
+
+cp ~/dotfiles/bin ~/
+
+cp ~/dotfiles/backgroud/wallpaper.jpg ~/Pictures/wallpaper.jpg
+
+cp -r ~/dotfiles/.config/bspwm ~/.config/
+cp -r ~/dotfiles/.config/sxhkd ~/.config/
+cp -r ~/dotfiles/.config/rofi ~/.config/
+cp -r ~/dotfiles/.config/picom ~/.config/
+cp -r ~/dotfiles/.config/dunst ~/.config/
+cp -r ~/dotfiles/.config/kitty ~/.config/
+
 source ~/debian-bspwm-installer/nerdfonts.sh
-
-cd
-git clone https://github.com/vbeskorovainyi/dotfiles
-cd ~/dotfiles
-
-cp ./bin ~/
-
-cp backgroud/wallpaper.jpg ~/Pictures/wallpaper.jpg
-
-cp -r bspwm ~/.config/
-cp -r sxhkd ~/.config/
-cp -r rofi ~/.config/
-cp -r picom ~/.config/
-cp -r dunst ~/.config/
-cp -r kitty ~/.config/
 
 ########################################################
 
