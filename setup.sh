@@ -24,8 +24,23 @@ Type=XSession
 EOF
 sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
 
-########################################################
-
 source ~/debian-bspwm-installer/nerdfonts.sh
+
+cd
+git clone https://github.com/vbeskorovainyi/dotfiles
+cd ~/dotfiles
+
+cp ./bin ~/
+
+cp backgroud/wallpaper.jpg ~/Pictures/wallpaper.jpg
+
+cp -r bspwm ~/.config/
+cp -r sxhkd ~/.config/
+cp -r rofi ~/.config/
+cp -r picom ~/.config/
+cp -r dunst ~/.config/
+cp -r kitty ~/.config/
+
+########################################################
 
 printf "\e[1;32mYou can now reboot! Thanks you.\e[0m\n"

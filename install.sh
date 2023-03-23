@@ -1,76 +1,92 @@
 #!/bin/bash
 
 # xorg display server installation
-sudo apt install xorg xbacklight xbindkeys xvkbd xinput
+sudo apt install -y xorg xbacklight xbindkeys xvkbd xinput numlockx
 
 # PACKAGE INCLUDES build-essential.
-sudo apt install build-essential
+sudo apt install -y build-essential
 
 # Microcode for Intel/AMD 
-# sudo apt install amd64-microcode
-sudo apt install intel-microcode 
+# sudo apt install -y amd64-microcode
+# sudo apt install -y intel-microcode #don't work
 
 # Network File Tools/System Events
-sudo apt install dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager
+sudo apt install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager
 
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
-# File Manager (eg. pcmanfm,krusader,thunar,nautilus)
-sudo apt install thunar
+# File Manager (or pcmanfm)
+sudo apt install -y thunar
 
-# Terminal (eg. terminator,kitty,xfce4-terminal)
-sudo apt install kitty
+# Terminal 
+sudo apt install -y kitty xterm
 
 # Sound packages
-sudo apt install pulseaudio alsa-utils pavucontrol volumeicon-alsa
+sudo apt install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa
 
 # Neofetch/HTOP
-sudo apt install neofetch htop
+sudo apt install -y neofetch htop
 
 # Network Manager
-sudo apt install network-manager network-manager-gnome 
+sudo apt install -y network-manager network-manager-gnome 
 
 # Appearance management
-sudo apt install lxappearance 
+sudo apt install -y lxappearance 
 
 # Browser Installation (Firefox)
-sudo apt install firefox-esr 
+sudo apt install -y firefox-esr 
 
-# Desktop background browser/handler 
-# feh --bg-fill /path/to/directory 
-sudo apt install nitrogen 
-# sudo apt install feh
- 
-# Fonts and icons
-sudo apt install fonts-firacode fonts-liberation2 fonts-ubuntu papirus-icon-theme fonts-cascadia-code
+# Desktop background browser/handler
+sudo apt install -y nitrogen
+
+# Color temperature setter
+sudo apt install -y redshift
+
+# Console screenshot utility
+sudo apt install -y scrot
 
 # EXA installation
-sudo apt install exa
+sudo apt install -y exa
 
-# Galculator installation
-sudo apt install galculator
+# Unzip installation
+sudo apt install -y unzip
 
 # Printing and bluetooth (if needed)
-sudo apt install cups system-config-printer simple-scan
-sudo apt install bluez blueman
+sudo apt install -y cups system-config-printer simple-scan
+sudo apt install -y bluez blueman
 
 sudo systemctl enable cups
 sudo systemctl enable bluetooth
 
-# Packages needed for bspwm installation
-sudo apt install bspwm sxhkd picom polybar dmenu xterm numlockx rofi dunst libnotify-bin unzip geany scrot mousepad redshift
+#  bspwm + sxhkd installation
+sudo apt install -y bspwm sxhkd
+
+# Menu
+sudo apt install -y dmenu rofi
+
+# Bar and composer
+sudo apt install -y picom polybar
+
+# Notifications
+sudo apt install -y dunst libnotify-bin
 
 # Command line text editor
-sudo apt install micro
+sudo apt install -y micro
+
+# Graphical text editors
+sudo apt install -y geany mousepad
+
+# Session manager installation
+sudo apt install -y lxsession
 
 # Install Lightdm Console Display Manager
-sudo apt install -y lightdm lightdm-gtk-greeter-settings
+sudo apt install -y -y lightdm lightdm-gtk-greeter-settings
 sudo systemctl enable lightdm
 
 # Ly Console Manager
 # Needed packages
-# sudo apt install libpam0g-dev libxcb-xkb-dev
+# sudo apt install -y libpam0g-dev libxcb-xkb-dev
 # cd 
 # git clone --recurse-submodules https://github.com/fairyglade/ly
 # cd ly
