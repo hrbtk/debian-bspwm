@@ -6,9 +6,9 @@ sudo apt install -y xorg xbacklight xbindkeys xvkbd xinput numlockx
 # PACKAGE INCLUDES build-essential.
 sudo apt install -y build-essential
 
-# Microcode for Intel/AMD 
+# Microcode for Intel/AMD (can't install)
 # sudo apt install -y amd64-microcode
-# sudo apt install -y intel-microcode #don't work
+# sudo apt install -y intel-microcode
 
 # Network File Tools/System Events
 sudo apt install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backends xfce4-power-manager
@@ -16,14 +16,14 @@ sudo apt install -y dialog mtools dosfstools avahi-daemon acpi acpid gvfs-backen
 sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
-# File Manager (or thunar) and Archive Manager
-sudo apt install -y pcmanfm file-roller
+# File Manager (or thunar) and Archive Managers
+sudo apt install -y pcmanfm file-roller unzip
 
 # Terminal 
 sudo apt install -y kitty xterm
 
 # Sound packages
-sudo apt install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa
+sudo apt install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa pamixer
 
 # Neofetch/HTOP
 sudo apt install -y neofetch htop
@@ -49,9 +49,6 @@ sudo apt install -y scrot
 # EXA installation
 sudo apt install -y exa
 
-# Unzip installation
-sudo apt install -y unzip
-
 # Printing and bluetooth (if needed)
 sudo apt install -y cups system-config-printer simple-scan
 sudo apt install -y bluez blueman
@@ -65,34 +62,38 @@ sudo apt install -y bspwm sxhkd
 # Menu
 sudo apt install -y dmenu rofi
 
+# Additional packages for rofi (requirments for rofi-calc https://github.com/svenstaro/rofi-calc)
+sudo apt install -y rofi-dev qalc libtool libtool-bin
+
 # Bar and composer
-sudo apt install -y picom polybar
+sudo apt install -y polybar picom
 
 # Notifications
 sudo apt install -y dunst libnotify-bin
 
 # Command line text editor
-sudo apt install -y micro
+sudo apt install -y micro neovim
 
 # Graphical text editors
 sudo apt install -y geany mousepad
 
 # Install Lightdm Console Display Manager
-sudo apt install -y -y lightdm lightdm-gtk-greeter-settings
+sudo apt install -y lightdm lightdm-gtk-greeter-settings
 sudo systemctl enable lightdm
-
-# Ly Console Manager
-# Needed packages
-# sudo apt install -y libpam0g-dev libxcb-xkb-dev
-# cd 
-# git clone --recurse-submodules https://github.com/fairyglade/ly
-# cd ly
-# make
-# sudo make install installsystemd
-# sudo systemctl enable ly.service
 
 ########################################################
 
 sudo apt autoremove
 
-printf "\e[1;32mNow you can run setup.sh script.\e[0m\n"
+########################################################
+
+# Some initial setup steps will be added
+
+# Test this for downloading style stuff
+# git clone https://myrepo.com/folder.git && \
+# git clone https://myrepo.com/folder2.git && \
+# git clone https://myrepo.com/folder3.git
+
+########################################################
+
+printf "\e[1;32mFinished!\e[0m\n"
