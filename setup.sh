@@ -30,7 +30,7 @@ sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
 # Copy backgroud image
 cp ~/debian-bspwm-installer/background/wallpaper.jpg ~/Pictures/wallpaper.jpg
 
-cd ~/ && git clone https://github.com/vbeskorovainyi/dotfiles &&
+cd ~/ && git clone https://github.com/hrbtk/dotfiles &&
 
 # Copy scripts
 cp -r ~/dotfiles/bin ~/
