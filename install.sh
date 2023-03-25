@@ -62,10 +62,14 @@ sudo apt install -y bspwm sxhkd
 # Menu
 sudo apt install -y dmenu rofi
 
-# Additional packages for rofi (requirments for rofi-calc https://github.com/svenstaro/rofi-calc)
+# Additional packages (not all) for these rofi apps:
+# https://github.com/svenstaro/rofi-calc
+# https://github.com/cdown/clipmenu
+# https://github.com/cdown/clipnotify
+# https://github.com/ericmurphyxyz/rofi-wifi-menu
 sudo apt install -y rofi-dev qalc libtool libtool-bin
 
-# Bar and composer
+# Bar and compositor
 sudo apt install -y polybar picom
 
 # Notifications
@@ -74,8 +78,8 @@ sudo apt install -y dunst libnotify-bin
 # Command line text editor
 sudo apt install -y micro neovim
 
-# Graphical text editors
-sudo apt install -y geany mousepad
+# Graphical text editor
+sudo apt install -y mousepad
 
 # Install Lightdm Console Display Manager
 sudo apt install -y lightdm lightdm-gtk-greeter-settings

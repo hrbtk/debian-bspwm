@@ -6,26 +6,26 @@ xdg-user-dirs-update
 mv ~/.bashrc ~/.bashrc.bak &&
 cp  ~/debian-bspwm-installer/.bashrc ~/.bashrc &&
 
-# mkdir -p ~/.config/{bspwm,sxhkd,dunst}
+mkdir -p ~/.config/{bspwm,sxhkd,dunst}
 
-# install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
-# install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
+install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
+install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
-# XSessions and bspwm.desktop
-if [[ ! -d /usr/share/xsessions ]]; then
-    sudo mkdir /usr/share/xsessions
-fi
+# XSessions and bspwm.desktop for ly
+# if [[ ! -d /usr/share/xsessions ]]; then
+#     sudo mkdir /usr/share/xsessions
+# fi
 
-cat > ./temp << "EOF"
-[Desktop Entry]
-Encoding=UTF-8
-Name=bspwm
-Comment=Binary space partitioning window manager
-Exec=bspwm
-Icon=bspwm
-Type=XSession
-EOF
-sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
+# cat > ./temp << "EOF"
+# [Desktop Entry]
+# Encoding=UTF-8
+# Name=bspwm
+# Comment=Binary space partitioning window manager
+# Exec=bspwm
+# Icon=bspwm
+# Type=XSession
+# EOF
+# sudo cp ./temp /usr/share/xsessions/bspwm.desktop;rm ./temp
 
 # Copy backgroud image
 cp ~/debian-bspwm-installer/background/wallpaper.jpg ~/Pictures/wallpaper.jpg
@@ -36,7 +36,7 @@ cd ~/ && git clone https://github.com/hrbtk/dotfiles &&
 cp -r ~/dotfiles/bin ~/
 
 # Copy .config files
-cp -r ~/dotfiles/.config/{bspwm,sxhkd,rofi,picom,dunst,kitty,polybar,neofetch,gtk-3.0} ~/.config/
+cp -r ~/dotfiles/.config/{bspwm,sxhkd,rofi,picom,dunst,kitty,polybar,neofetch} ~/.config/
 
 # Zafiro icons installation
 # https://github.com/zayronxio/Zafiro-icons

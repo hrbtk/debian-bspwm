@@ -30,5 +30,6 @@ export PATH="/usr/local/go/bin:$PATH"
  export VISUAL=nvim;
  export EDITOR=nvim;
 # PS1 Customization
-PS1="\[\e[32m\]\h\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[34m\]\u\[\e[m\] \W \$ " 
+# PS1="\[\e[32m\]\h\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[34m\]\u\[\e[m\] \W \$ "
+PS1="\W $ "
 neofetch
