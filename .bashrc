@@ -8,7 +8,7 @@ alias ..='cd ..'
 alias ...='cd ../..' 
 alias gcf='cd $HOME/.config'
 alias gdl='cd $HOME/Downloads'
-alias ls='exa -alh --header --group-directories-first'
+alias ls='exa -alh --color=always --header --group-directories-first'
 alias df='df -h'
 alias free='free -h'
 
